@@ -8,3 +8,12 @@ Una función que reciba el fichero de calificaciones
 y devuelva una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
 la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 '''
+import os 
+import sys
+
+def notas():
+    f = open('calificaciones.csv', 'r')
+    lineas = f.readlines()
+    print(lineas)
+
+notas
