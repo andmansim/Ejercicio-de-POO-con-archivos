@@ -59,7 +59,7 @@ def ponderaciones(lista):
             j['Practicas'] = str(practicas)
         else: 
             practicas = practicas.replace(',', '.')
-            j['Parcial2'] = p2
+            j['Practicas'] = practicas
         
         if j['Ordinario1'] == "":
             j['Ordinario1'] = '0.0'
