@@ -11,8 +11,11 @@ la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 import csv
 import sys  #sys.getdefaultencoding() nos dice en que formato está
 lista = []
-def informacion(lista):
-    
+'''
+Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
+la asistencia de un alumno
+'''
+def informacion(lista): 
     with open ('calificaciones.csv') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
         #leer es un objeto de la clase DictReader
