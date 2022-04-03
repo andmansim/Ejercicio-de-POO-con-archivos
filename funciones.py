@@ -9,13 +9,19 @@ y devuelva una lista de diccionarios, donde cada diccionario contiene la informa
 la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 '''
 import csv
-import sys
-print(sys.getdefaultencoding())
-with open ('calificaciones.csv') as file:
-    leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
-    #leer es un objeto de la clase DictReader
-    for i in leer:
-        print(i['Apellidos'])
-    '''for i in leer:
-        print(dict(i))'''
- 
+import sys  #sys.getdefaultencoding() nos dice en que formato está
+lista = []
+def informacion(lista):
+    
+    with open ('calificaciones.csv') as file:
+        leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
+        #leer es un objeto de la clase DictReader
+        '''for i in leer:
+            print(i['Apellidos'])'''
+        for i in leer:
+            lista.append(i)
+        print(lista)
+    return lista
+
+informacion(lista)
+print(lista)
