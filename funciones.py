@@ -16,11 +16,11 @@ import csv
 import operator
 
 lista = []
+
 '''
 Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
 la asistencia de un alumno
 '''
-
 def informacion(lista): 
     with open ('calificaciones.csv') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
@@ -32,16 +32,18 @@ def informacion(lista):
         return lista
 
 informacion(lista)
+
 # separamos en diccionarios
 for x in range(len(lista)):
     print(lista[x])
-    
+
+#función que añade a cada diccionario un nuevo par con la nota final del curso 
 def ponderaciones(lista):
     for j in lista:
         p1 = j.get('Parcial1')
         p2 = j.get('Parcial2')
         practicas = j.get('Practicas')
-        print(type(practicas))
+        
         if p1 == '' :
             p1 = 0.0
             j['Parcial1'] = str(p1)
