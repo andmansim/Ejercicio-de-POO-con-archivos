@@ -33,3 +33,13 @@ informacion(lista)
 # separamos en diccionarios
 for x in range(len(lista)):
     print(lista[x])
+    
+def ponderaciones(lista):
+    for j in lista:
+        p1 = j.get('Parcial1')
+        p2 = j.get('Parcial2')
+        practicas = j.get('Practicas')
+        j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
+        print(j)
+
+ponderaciones(lista)
