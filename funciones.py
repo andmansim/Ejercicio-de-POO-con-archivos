@@ -10,7 +10,8 @@ la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 '''
 import csv
 with open ('calificaciones.csv') as file:
-    leer = csv.DictReader(file)
+    leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
+    #leer es un objeto de la clase DictReader
     for i in leer:
         print(i['Apellidos'])
 
