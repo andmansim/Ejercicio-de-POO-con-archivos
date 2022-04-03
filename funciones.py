@@ -44,8 +44,13 @@ def ponderaciones(lista):
             p1 = 0
             p2 = 0
             practicas = 0
-        c1 = 
-        if 
+        c1 = ',' in p1
+        c2 = ',' in p2
+        c = ',' in practicas
+        if c1 == True or c2 == True or c == True:
+            c1.replace(',', '.')
+            c2.replace(',', '.')
+            c.replace(',', '.')
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         print(j)
 
