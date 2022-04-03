@@ -20,6 +20,7 @@ lista = []
 Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
 la asistencia de un alumno
 '''
+
 def informacion(lista): 
     with open ('calificaciones.csv') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
@@ -44,18 +45,11 @@ def ponderaciones(lista):
             p1 = 0
             p2 = 0
             practicas = 0
-        c1 = ',' in p1
-        c2 = ',' in p2
-        c = ',' in practicas
-        if c1 == True or c2 == True or c == True:
-            c1.replace(',', '.')
-            c2.replace(',', '.')
-            c.replace(',', '.')
+
+        c1 = p1.replace(',', '.')
+        c2 = p2.replace(',', '.')
+        c = practicas.replace(',', '.')
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         print(j)
 
 #ponderaciones(lista)
-c1 = '2,5'
-
-c1.replace('2', '.')
-print(c1)
