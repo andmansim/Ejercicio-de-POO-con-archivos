@@ -41,15 +41,21 @@ def ponderaciones(lista):
         p1 = j.get('Parcial1')
         p2 = j.get('Parcial2')
         practicas = j.get('Practicas')
-        if p1 == '' or p2 == '' or practicas == '':
-            p1 = 0
-            p2 = 0
-            practicas = 0
-
-        c1 = p1.replace(',', '.')
-        c2 = p2.replace(',', '.')
-        c = practicas.replace(',', '.')
+        print(type(practicas))
+        if p1 == '' :
+            p1 = 0.0
+        else:
+            p1 = p1.replace(',', '.')
+        if p2 == '' :
+            p2 = 0.0
+        else:
+            p2 = p2.replace(',', '.')
+        if practicas == '':
+            practicas = 0.0
+        else: 
+            practicas = practicas.replace(',', '.')
+        
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         print(j)
 
-#ponderaciones(lista)
+ponderaciones(lista)
