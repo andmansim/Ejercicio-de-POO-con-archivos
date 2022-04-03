@@ -20,7 +20,7 @@ def informacion(lista):
     with open ('calificaciones.csv') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
         #leer es un objeto de la clase DictReader
-        ordenar = sorted (leer, key=operator.itemgetter('Apellidos'))
+        ordenar = sorted (leer, key=operator.itemgetter('Apellidos')) #ordenamos en función de los apellidos
         for i in ordenar:
             lista.append(i)
         
