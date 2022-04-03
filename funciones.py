@@ -54,4 +54,8 @@ def ponderaciones(lista):
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         print(j)
 
-ponderaciones(lista)
+#ponderaciones(lista)
+c1 = '2,5'
+
+c1.replace('2', '.')
+print(c1)
