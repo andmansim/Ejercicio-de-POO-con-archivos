@@ -14,6 +14,7 @@ El peso de cada parcial de teoría en la nota final es de un
 import csv
 #import sys  sys.getdefaultencoding() nos dice en que formato está
 import operator
+
 lista = []
 '''
 Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
@@ -39,6 +40,12 @@ def ponderaciones(lista):
         p1 = j.get('Parcial1')
         p2 = j.get('Parcial2')
         practicas = j.get('Practicas')
+        if p1 == '' or p2 == '' or practicas == '':
+            p1 = 0
+            p2 = 0
+            practicas = 0
+        c1 = 
+        if 
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         print(j)
 
