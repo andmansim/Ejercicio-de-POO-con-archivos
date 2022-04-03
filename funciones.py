@@ -9,7 +9,8 @@ y devuelva una lista de diccionarios, donde cada diccionario contiene la informa
 la asistencia de un alumno. La lista tiene que estar ordenada por apellidos.
 '''
 import csv
-with open ('calificaciones.csv', 'r') as file:
-    leer = csv.reader([file])
-    lista = list(leer)
-print(lista)
+with open ('calificaciones.csv') as file:
+    leer = csv.DictReader(file)
+    for i in leer:
+        print(i['Apellidos'])
+
