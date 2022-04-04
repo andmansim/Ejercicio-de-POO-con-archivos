@@ -6,11 +6,11 @@ Escribir un programa que contenga las siguientes funciones:
 '''
 '''
 Una función que reciba una lista de diccionarios como la que devuelve la función anterior y 
-añada a cada diccionario un nuevo par con la nota final del curso. 
-El peso de cada parcial de teoría en la nota final es de un 
-30% mientras que el peso del examen de prácticas es de un 40%.
+devuelva dos listas, una con los alumnos aprobados y otra con los alumnos suspensos. 
+Para aprobar el curso, la asistencia tiene que ser mayor o igual que el 75%, 
+la nota de los exámenes parciales y de prácticas mayor o igual que 4 y 
+la nota final mayor o igual que 5.
 '''
-
 import csv
 #import sys  sys.getdefaultencoding() nos dice en que formato está
 import operator
