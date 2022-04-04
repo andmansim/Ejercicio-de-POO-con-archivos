@@ -82,10 +82,6 @@ def ponderaciones(lista):
             if float(practicas) <= 4.0:
                 practicas = j['OrdinarioPracticas']
         
-
-        
-    
-        
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
         
 
