@@ -46,10 +46,16 @@ def ponderaciones(lista):
 
         if j['Ordinario1'] == "":
             j['Ordinario1'] = '0.0'
+        else: 
+            j['Ordinario1'] = j['Ordinario1'].replace(',', '.')
         if j['Ordinario2'] == "":
             j['Ordinario2'] = '0.0'
+        else:
+            j['Ordinario2'] = j['Ordinario2'].replace(',', '.')
         if j['OrdinarioPracticas'] == "":
             j['OrdinarioPracticas'] = '0.0'
+        else: 
+            j['OrdinarioPracticas'] = j['OrdinarioPracticas'].replace(',', '.')
             
         if p1 == '' :
             j['Parcial1'] = '0.0'
