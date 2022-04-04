@@ -33,9 +33,9 @@ def informacion(lista):
 
 informacion(lista)
 
-# separamos en diccionarios
+'''# separamos en diccionarios
 for x in range(len(lista)):
-    print(lista[x])
+    print(lista[x])'''
 
 #función que añade a cada diccionario un nuevo par con la nota final del curso 
 def ponderaciones(lista):
@@ -43,7 +43,7 @@ def ponderaciones(lista):
         p1 = j.get('Parcial1')
         p2 = j.get('Parcial2')
         practicas = j.get('Practicas')
-        
+
         if p1 == '' :
             p1 = 0.0
             j['Parcial1'] = str(p1)
@@ -70,7 +70,11 @@ def ponderaciones(lista):
         if j['OrdinarioPracticas'] == "":
             j['OrdinarioPracticas'] = '0.0'
         
+        
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
-        print(j)
+        
 
 ponderaciones(lista)
+# separamos en diccionarios
+for x in range(len(lista)):
+    print(lista[x])
