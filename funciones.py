@@ -83,9 +83,18 @@ def ponderaciones(lista):
                 practicas = j['OrdinarioPracticas']
         
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
-        
 
 ponderaciones(lista)
+        
+def aprobado(lista):
+    for p in lista:
+        asistencia = j['Asistencia']
+        if asistencia <= '75%':
+            p['Curso'] = "Suspenso"
+        else:
+            pass
+    
+aprobado(lista)
 # separamos en diccionarios
 for x in range(len(lista)):
     print(lista[x])
