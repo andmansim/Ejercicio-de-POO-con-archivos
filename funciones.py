@@ -73,6 +73,8 @@ def ponderaciones(lista):
         else: 
             practicas = practicas.replace(',', '.')
             j['Practicas'] = practicas
+            if float(practicas) <= 4.0:
+                practicas = j['OrdinarioPracticas']
         
 
         
