@@ -50,21 +50,26 @@ def ponderaciones(lista):
             j['Ordinario2'] = '0.0'
         if j['OrdinarioPracticas'] == "":
             j['OrdinarioPracticas'] = '0.0'
+            
         if p1 == '' :
-            p1 = 0.0
-            j['Parcial1'] = str(p1)
+            j['Parcial1'] = '0.0'
+            p1 = j['Ordinario1']
         else:
             p1 = p1.replace(',', '.')
             j['Parcial1'] = p1
+            if float(p1) <= 4.0:
+                p1 = j['Ordinario1']
         if p2 == '' :
-            p2 = 0.0
-            j['Parcial2'] = str(p2)
+            j['Parcial2'] = '0.0'
+            p2 = j['Ordinario2']
         else:
             p2 = p2.replace(',', '.')
             j['Parcial2'] = p2
+            if float(p2) <= 4.0:
+                p2 = j['Ordinario2']
         if practicas == '':
-            practicas = 0.0
-            j['Practicas'] = str(practicas)
+            practicas = j['OrdinarioPracticas']
+            j['Practicas'] = '0.0'
         else: 
             practicas = practicas.replace(',', '.')
             j['Practicas'] = practicas
