@@ -2,7 +2,7 @@ import csv
 #import sys  sys.getdefaultencoding() nos dice en que formato está
 import operator
 
-lista = []
+#lista = []
 
 
 #Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
@@ -17,7 +17,7 @@ def informacion(lista):
         
         return lista
 
-informacion(lista)
+'''informacion(lista)'''
 
 #función que añade a cada diccionario un nuevo par con la nota final del curso 
 def ponderaciones(lista):
@@ -66,9 +66,9 @@ def ponderaciones(lista):
         #calculamos la nota con la ponderación
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
 
-ponderaciones(lista)
+'''ponderaciones(lista)
 aprobados = []  
-suspensos = []
+suspensos = []'''
 #Tercera función que devuelve una lista con los aprobados y los suspensos     
 def aprobado(lista, aprobados, suspensos):
     for p in lista:
@@ -90,7 +90,7 @@ def aprobado(lista, aprobados, suspensos):
                     suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
     return aprobados, suspensos
 
-aprobado(lista, aprobados, suspensos )
+'''aprobado(lista, aprobados, suspensos )
 
 # separamos en diccionarios
 for x in range(len(lista)):
@@ -99,4 +99,4 @@ for x in range(len(lista)):
 print("La lista de aprobados es la siguiente:")
 print(aprobados)
 print("La lista de suspensos es la siguiente:")
-print(suspensos)
+print(suspensos)'''
