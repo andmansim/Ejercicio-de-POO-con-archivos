@@ -87,12 +87,14 @@ def aprobado(lista, aprobados, suspensos):
     
     for p in lista:
         asistencia = p['Asistencia']
-        if asistencia <= '75%':
+        print(asistencia)
+        if asistencia < '75%':
+            print(asistencia)
             suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
         else:
             pass
     return aprobados, suspensos
-aprobado(lista, aprobados)
+aprobado(lista, aprobados, suspensos )
 # separamos en diccionarios
 
 for x in range(len(lista)):
