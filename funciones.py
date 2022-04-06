@@ -72,8 +72,8 @@ def ponderaciones(lista):
             j['Parcial2'] = p2
             
         if practicas == '':
-            practicas = j['OrdinarioPracticas']
-            j['OrdinarioPracticas'] = '0.0'
+            j['Practicas'] = '0.0'
+            practicas = j['Practicas']
         else: 
             practicas = practicas.replace(',', '.')
             j['Practicas'] = practicas
@@ -87,12 +87,20 @@ def aprobado(lista, aprobados, suspensos):
     
     for p in lista:
         asistencia = p['Asistencia']
-        print(asistencia)
-        if asistencia < '75%':
-            print(asistencia)
+        if asistencia < '75%' and asistencia != '100%':
             suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
         else:
-            pass
+            if p['Nota final'] >= '5':
+                aprobados.append(p['Nombre'] + ' ' + p['Apellidos'])
+            else:
+                o1 =  p['Ordinario1']
+                o2 =  p['Ordinario2']
+                o = p['OrdinarioPracticas']
+                nota_f_ordinaria = float(o1) * 0.3 + float(o2) * 0.3 + float(o) * 0.4
+                if nota_f_ordinaria >= '5':
+                    aprobados.append(p['Nombre'] + ' ' + p['Apellidos'])
+                else:
+                    suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
     return aprobados, suspensos
 aprobado(lista, aprobados, suspensos )
 # separamos en diccionarios
