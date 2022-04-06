@@ -90,14 +90,14 @@ def aprobado(lista, aprobados, suspensos):
         if asistencia < '75%' and asistencia != '100%':
             suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
         else:
-            if p['Nota final'] >= '5':
+            if p['Nota final'] >= 5.0:
                 aprobados.append(p['Nombre'] + ' ' + p['Apellidos'])
             else:
                 o1 =  p['Ordinario1']
                 o2 =  p['Ordinario2']
                 o = p['OrdinarioPracticas']
                 nota_f_ordinaria = float(o1) * 0.3 + float(o2) * 0.3 + float(o) * 0.4
-                if nota_f_ordinaria >= '5':
+                if nota_f_ordinaria >= 5.0:
                     aprobados.append(p['Nombre'] + ' ' + p['Apellidos'])
                 else:
                     suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
