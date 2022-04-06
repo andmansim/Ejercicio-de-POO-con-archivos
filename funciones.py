@@ -1,26 +1,12 @@
-''' 
-Durante el curso se realizaron dos exámenes parciales de teoría y un examen de prácticas.
-Los alumnos que tuvieron menos de 4 en alguno de estos exámenes pudieron repetirlo en la al final del
-curso (convocatoria ordinaria).
-Escribir un programa que contenga las siguientes funciones:
-'''
-'''
-Una función que reciba una lista de diccionarios como la que devuelve la función anterior y 
-devuelva dos listas, una con los alumnos aprobados y otra con los alumnos suspensos. 
-Para aprobar el curso, la asistencia tiene que ser mayor o igual que el 75%, 
-la nota de los exámenes parciales y de prácticas mayor o igual que 4 y 
-la nota final mayor o igual que 5.
-'''
 import csv
 #import sys  sys.getdefaultencoding() nos dice en que formato está
 import operator
 
 lista = []
 
-'''
-Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
-la asistencia de un alumno
-'''
+
+#Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
+#la asistencia de un alumno
 def informacion(lista): 
     with open ('calificaciones.csv') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
@@ -33,30 +19,30 @@ def informacion(lista):
 
 informacion(lista)
 
-'''# separamos en diccionarios
-for x in range(len(lista)):
-    print(lista[x])'''
-
 #función que añade a cada diccionario un nuevo par con la nota final del curso 
 def ponderaciones(lista):
     for j in lista:
         p1 = j.get('Parcial1')
         p2 = j.get('Parcial2')
         practicas = j.get('Practicas')
-
+        
+        #trasformamos espacio en blanco y cambiamos comas por puntos
         if j['Ordinario1'] == "":
             j['Ordinario1'] = '0.0'
         else: 
             j['Ordinario1'] = j['Ordinario1'].replace(',', '.')
+            
         if j['Ordinario2'] == "":
             j['Ordinario2'] = '0.0'
         else:
             j['Ordinario2'] = j['Ordinario2'].replace(',', '.')
+            
         if j['OrdinarioPracticas'] == "":
             j['OrdinarioPracticas'] = '0.0'
         else: 
             j['OrdinarioPracticas'] = j['OrdinarioPracticas'].replace(',', '.')
-            
+        
+        #trasformamos espacio en blanco y cambiamos comas por puntos  
         if p1 == '' :
             j['Parcial1'] = '0.0'
             p1 = j['Parcial1']
@@ -77,16 +63,17 @@ def ponderaciones(lista):
         else: 
             practicas = practicas.replace(',', '.')
             j['Practicas'] = practicas
-        
+        #calculamos la nota con la ponderación
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
 
 ponderaciones(lista)
 aprobados = []  
-suspensos = []     
+suspensos = []
+#Tercera función que devuelve una lista con los aprobados y los suspensos     
 def aprobado(lista, aprobados, suspensos):
-    
     for p in lista:
         asistencia = p['Asistencia']
+        #añadimos a las listas suspensos o aprobados
         if asistencia < '75%' and asistencia != '100%':
             suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
         else:
@@ -102,11 +89,13 @@ def aprobado(lista, aprobados, suspensos):
                 else:
                     suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
     return aprobados, suspensos
-aprobado(lista, aprobados, suspensos )
-# separamos en diccionarios
 
+aprobado(lista, aprobados, suspensos )
+
+# separamos en diccionarios
 for x in range(len(lista)):
     print(lista[x])
+    
 print("La lista de aprobados es la siguiente:")
 print(aprobados)
 print("La lista de suspensos es la siguiente:")
