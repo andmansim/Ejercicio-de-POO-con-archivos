@@ -81,17 +81,23 @@ def ponderaciones(lista):
         j['Nota final'] = float(p1) * 0.3 + float(p2) * 0.3 + float(practicas) * 0.4
 
 ponderaciones(lista)
-        
-def aprobado(lista):
-    aprobados = []
+aprobados = []  
+suspensos = []     
+def aprobado(lista, aprobados, suspensos):
+    
     for p in lista:
         asistencia = p['Asistencia']
-        if asistencia >= '75%':
-            aprobado.append(p['Nombre'] + p['Apellidos'])
+        if asistencia <= '75%':
+            suspensos.append(p['Nombre'] + ' ' + p['Apellidos'])
         else:
             pass
-    
-#aprobado(lista)
+    return aprobados, suspensos
+aprobado(lista, aprobados)
 # separamos en diccionarios
+
 for x in range(len(lista)):
     print(lista[x])
+print("La lista de aprobados es la siguiente:")
+print(aprobados)
+print("La lista de suspensos es la siguiente:")
+print(suspensos)
