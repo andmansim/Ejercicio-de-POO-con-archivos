@@ -5,7 +5,7 @@ import operator
 #Primer función que devuelve una lista de diccionarios, donde cada diccionario contiene la información de los exámenes y 
 #la asistencia de un alumno
 def informacion(lista): 
-    with open ('calificaciones.csv') as file:
+    with open ('calificaciones.csv', encoding= 'UTF-8') as file:
         leer = csv.DictReader(file, delimiter = ';') #delimiter, para indicar los separadores
         #leer es un objeto de la clase DictReader
         ordenar = sorted (leer, key=operator.itemgetter('Apellidos')) #ordenamos en función de los apellidos

@@ -10,7 +10,8 @@ if __name__ == '__main__':
     funciones.aprobado(lista, aprobados, suspensos )
 
     print("Notas de los estudiantes:")
-    # separamos en diccionarios
+    
+    #separamos en diccionarios
     for x in range(len(lista)):
         print(lista[x])
         
